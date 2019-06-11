@@ -2,11 +2,16 @@
 
 Easy to use static Singleton for any C++ class.
 
-Developed with [Mesinger](https://github.com/mesinger).
+Developed with [mesinger](https://github.com/mesinger).
 
 ## Usage
 
-In the class `MyClass` which you want to turn into a Singleton, make the constructor protected and add Singleton as a friend class:
-`friend class Singleton<MyClass>;`
+In the class `MyClass` which you want to turn into a Singleton, add following line:
+```c++
+MAKE_SINGLETON(MyClass)
+```
 
-Get the object using `Singleton<MyClass>::getInstance()`!
+Get the object using:
+```c++
+Singleton<MyClass>::getInstance()
+```
