@@ -1,9 +1,6 @@
-#ifndef KB173_SINGLETON_H
-#define KB173_SINGLETON_H
-
+#pragma once
 
 #include <memory>
-
 
 template<class T>
 class Singleton {
@@ -24,6 +21,7 @@ T *Singleton<T>::getInstance() {
     return instance.get();
 }
 
-
-#endif //KB173_SINGLETON_H
-
+#define MAKE_SINGLETON(cls) friend class Singleton<cls>;\
+							protected: \
+								cls() = default;\
+							public:
